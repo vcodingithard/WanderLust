@@ -1,0 +1,31 @@
+<nav>
+  <a  href="/"><i class="fa-brands fa-airbnb logo"></i></a>
+  <div class="navlinks">
+  <a  href="/listings">Home</a> 
+  <a  href="/listings">Show all Listing</a>
+  <a  href="/listings/new">Add new Listing</a>
+  
+  </div>
+
+  <form action="listings/search" method="GET" class="search-container">
+    <input type="text" name="name" placeholder="Search listings..." >
+    <button type="submit">Search</button>
+`</form>
+ 
+  <div class="login">
+    <% if(!curruser){ %>
+    <a href="/signup">
+      <i class="fa-solid fa-user-plus"></i> Signup
+  </a>
+  <a href="/login">
+      <i class="fa-solid fa-right-to-bracket"></i> Login
+  </a>
+  <% } %>
+  <% if(curruser){ %>
+  <a href="/logout">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+  </a>
+  <% } %>
+  </div>
+</nav>
+<button id="navbtn"><i class="fa-solid fa-bars" style="font-size: larger;"></i></button>
