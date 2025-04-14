@@ -6,11 +6,14 @@
   <a  href="/listings/new">Add new Listing</a>
   
   </div>
+  <div class="si">
+    <form action="listings/search" method="GET" class="search-container">
+      <input class="search" type="text" name="name" placeholder="Search listings..." >
+      <button type="submit">Search</button>
+  `</form>
+  </div>
+  
 
-  <form action="listings/search" method="GET" class="search-container">
-    <input type="text" name="name" placeholder="Search listings..." >
-    <button type="submit">Search</button>
-`</form>
  
   <div class="login">
     <% if(!curruser){ %>
@@ -29,3 +32,101 @@
   </div>
 </nav>
 <button id="navbtn"><i class="fa-solid fa-bars" style="font-size: larger;"></i></button>
+
+
+<form action="/listings/filter" method="GET" class="filters-form">
+  <div class="filters-container">
+    <button class="filters-apply-btn" type="submit">Apply Filters</button>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Beaches" id="beaches">
+      <label for="beaches">
+        <div class="centeralign">
+          <i class="fas fa-umbrella-beach"></i>
+          <p>Beaches</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Treks" id="treks">
+      <label for="treks">
+        <div class="centeralign">
+          <i class="fas fa-hiking"></i>
+          <p>Treks</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Culture" id="culture">
+      <label for="culture">
+        <div class="centeralign">
+          <i class="fas fa-theater-masks"></i>
+          <p>Culture</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Temples" id="temples">
+      <label for="temples">
+        <div class="centeralign">
+          <i class="fas fa-place-of-worship"></i>
+          <p>Temples</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Hills" id="hills">
+      <label for="hills">
+        <div class="centeralign">
+          <i class="fas fa-mountain"></i>
+          <p>Hills</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Street Food" id="street-food">
+      <label for="street-food">
+        <div class="centeralign">
+          <i class="fas fa-utensils"></i>
+          <p>Street Food</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Wildlife" id="wildlife">
+      <label for="wildlife">
+        <div class="centeralign">
+          <i class="fas fa-paw"></i>
+          <p>Wildlife</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Seafood" id="seafood">
+      <label for="seafood">
+        <div class="centeralign">
+          <i class="fas fa-fish"></i>
+          <p>Seafood</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="filter-option">
+      <input type="checkbox" name="filter" value="Backwaters" id="backwaters">
+      <label for="backwaters">
+        <div class="centeralign">
+          <i class="fas fa-water"></i>
+          <p>Backwaters</p>
+        </div>
+      </label>
+    </div>
+  </div>
+</form>
+

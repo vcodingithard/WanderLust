@@ -2,13 +2,13 @@ const express=require("express");
 const router=express.Router();
 const WrapAsync=require("../utils/WrapAsync")
 const {isLoggedIn,checkOwner,validateListing, redirectedUrl}=require("../middleware")
-const {index,show,newPage,deleteList,searchInput,newList,updateList,editPage}=require("../controllers/listing.js")
+const {index,show,newPage,deleteList,searchInput,newList,updateList,editPage,filterList}=require("../controllers/listing.js")
 const multer  = require('multer')
 const {storage}=require("../cloudConfig.js")
 
 const upload = multer({ storage })
 
-router.get("/",WrapAsync(index));
+router.get("/",WrapAsync(index));   
 
 router.get("/:id/show",WrapAsync(show))
 
@@ -25,5 +25,5 @@ router.patch("/:id",isLoggedIn,checkOwner,validateListing,WrapAsync(updateList) 
 
 router.get("/search", WrapAsync(searchInput));
 
-
+router.get("/filter",WrapAsync(filterList))
 module.exports=router; 

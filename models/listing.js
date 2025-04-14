@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Review = require("./review");
 const User= require("./user");
+const { required } = require('joi');
 const { Schema } = mongoose;
 
 const listingSchema = new Schema({
@@ -18,6 +19,10 @@ const listingSchema = new Schema({
         filename:{
             type:String
         },
+    },
+    filters:{
+        type:[String],
+        required:true
     },
     price: {
         type: Number,
