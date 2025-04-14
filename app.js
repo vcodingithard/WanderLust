@@ -92,7 +92,9 @@
     app.use("/listings",listings);//for listing route
     app.use("/listings/:id/reviews",reviews);//for listing route along with reviews
     app.use("/",user);
-
+    app.get("/",(req,res)=>{
+        res.redirect("/listings");
+    })
     //for every other route which is not present wit any type of requests
     //NOTE:next is used to call the error middleware
     app.all("*",(req,res,next)=>{   
