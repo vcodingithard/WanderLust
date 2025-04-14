@@ -106,7 +106,7 @@
         let { statuscode=500,message="some error has occured" }=err;//= are the default status code/message
         res.status(statuscode).render("listings/error.ejs",{ message });
     })
-
+    const port= process.env.PORT || 3000;
     app.listen(3000, () => {
         console.log("Server running on http://localhost:3000");
     });
