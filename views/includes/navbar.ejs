@@ -2,19 +2,18 @@
   <a  href="/"><i class="fa-brands fa-airbnb logo"></i></a>
   <div class="navlinks">
   <a  href="/listings">Home</a> 
-  <a  href="/listings">Show all Listing</a>
-  <a  href="/listings/new">Add new Listing</a>
-  
-  </div>
+  <a  href="/listings/new">AirBnb your home</a>
+  </div>  
   <div class="si">
     <form action="listings/search" method="GET" class="search-container">
       <input class="search" type="text" name="name" placeholder="Search listings..." >
       <button type="submit">Search</button>
   `</form>
   </div>
-  
-
- 
+  <div class="switch form-check form-switch" style="margin-left: 1rem;">
+    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+    <label class="form-check-label" for="switchCheckDefault">Show taxes</label>
+  </div>
   <div class="login">
     <% if(!curruser){ %>
     <a href="/signup">
@@ -30,103 +29,125 @@
   </a>
   <% } %>
   </div>
+
 </nav>
 <button id="navbtn"><i class="fa-solid fa-bars" style="font-size: larger;"></i></button>
 
+<div class="belowNavbar">
 
-<form action="/listings/filter" method="GET" class="filters-form">
-  <div class="filters-container">
-    <button class="filters-apply-btn" type="submit">Apply Filters</button>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Beaches" id="beaches">
-      <label for="beaches">
-        <div class="centeralign">
-          <i class="fas fa-umbrella-beach"></i>
-          <p>Beaches</p>
+  <div class="filters">
+    <form action="/listings/filter" method="GET" class="filters-form">
+      <div class="filters-container">
+        <button class="filterbutton" type="submit">Apply Filters</button>
+
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Beaches" id="beaches">
+          <label for="beaches">
+            <i class="fas fa-umbrella-beach"></i>
+            <p>Beaches</p>
+          </label>
         </div>
-      </label>
-    </div>
-
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Treks" id="treks">
-      <label for="treks">
-        <div class="centeralign">
-          <i class="fas fa-hiking"></i>
-          <p>Treks</p>
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Treks" id="treks">
+          <label for="treks">
+            <div class="centeralign">
+              <i class="fas fa-hiking"></i>
+              <p>Treks</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Culture" id="culture">
-      <label for="culture">
-        <div class="centeralign">
-          <i class="fas fa-theater-masks"></i>
-          <p>Culture</p>
+        <div class="filter-option">
+          <input type="checkbox" name="filter" value="Culture" id="culture">
+          <label for="culture">
+            <div class="centeralign">
+              <i class="fas fa-theater-masks"></i>
+              <p>Culture</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Temples" id="temples">
-      <label for="temples">
-        <div class="centeralign">
-          <i class="fas fa-place-of-worship"></i>
-          <p>Temples</p>
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Temples" id="temples">
+          <label for="temples">
+            <div class="centeralign">
+              <i class="fas fa-place-of-worship"></i>
+              <p>Temples</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Hills" id="hills">
-      <label for="hills">
-        <div class="centeralign">
-          <i class="fas fa-mountain"></i>
-          <p>Hills</p>
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Hills" id="hills">
+          <label for="hills">
+            <div class="centeralign">
+              <i class="fas fa-mountain"></i>
+              <p>Hills</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Street Food" id="street-food">
-      <label for="street-food">
-        <div class="centeralign">
-          <i class="fas fa-utensils"></i>
-          <p>Street Food</p>
+        <div class="filter-option">
+          <input type="checkbox" name="filter" value="Street Food" id="street-food">
+          <label for="street-food">
+            <div class="centeralign">
+              <i class="fas fa-utensils"></i>
+              <p>Street Food</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Wildlife" id="wildlife">
-      <label for="wildlife">
-        <div class="centeralign">
-          <i class="fas fa-paw"></i>
-          <p>Wildlife</p>
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Wildlife" id="wildlife">
+          <label for="wildlife">
+            <div class="centeralign">
+              <i class="fas fa-paw"></i>
+              <p>Wildlife</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Seafood" id="seafood">
-      <label for="seafood">
-        <div class="centeralign">
-          <i class="fas fa-fish"></i>
-          <p>Seafood</p>
+        <div class="filter-option">
+          <input type="checkbox" name="filter" value="Seafood" id="seafood">
+          <label for="seafood">
+            <div class="centeralign">
+              <i class="fas fa-fish"></i>
+              <p>Seafood</p>
+            </div>
+          </label>
         </div>
-      </label>
-    </div>
 
-    <div class="filter-option">
-      <input type="checkbox" name="filter" value="Backwaters" id="backwaters">
-      <label for="backwaters">
-        <div class="centeralign">
-          <i class="fas fa-water"></i>
-          <p>Backwaters</p>
-        </div>
-      </label>
-    </div>
+        <div class="filter-option">
+          <input  type="checkbox" name="filter" value="Backwaters" id="backwaters">
+          <label for="backwaters">
+            <div class="centeralign">
+              <i class="fas fa-water"></i>
+              <p>Backwaters</p>
+            </div>
+          </label>
+        </div>     
+      </div>
+    </form>
   </div>
-</form>
+</div>
 
+<script>
+  let checkboxes = document.querySelectorAll(".filter-option input[type='checkbox']");
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    let parentDiv = checkbox.closest(".filter-option"); // Get the parent .filter-option div
+    let label = parentDiv.querySelector("label"); // Get the associated label
+    
+    if (checkbox.checked) {
+      parentDiv.classList.add("clicked"); // Add 'clicked' class to div
+      label.classList.add("clicked"); // Add 'clicked' class to label
+    } else {
+      parentDiv.classList.remove("clicked"); // Remove 'clicked' class from div
+      label.classList.remove("clicked"); // Remove 'clicked' class from label
+    }
+  });
+});
+
+</script>

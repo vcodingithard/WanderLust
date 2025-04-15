@@ -8,7 +8,7 @@ body{
 .container-fluid{
     flex:1;
     width: 100%;
-    margin-top: 10rem;   
+    margin-top: 11rem;   
 }
 nav{
     font-size: large;
@@ -265,97 +265,88 @@ h1{
     font-weight: bold;
     text-align: center;
 }
-/* Container for filter options */
-.filters-container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 1.5rem;
-  white-space: nowrap;
-  margin-top: 3.5rem;
-  position: fixed;
-  width: 100%;
-  height: 6rem;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 9999;
-  background-color: #F2F2F2;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+.belowNavbar {
+    position: fixed;
+    top: 3.5rem;
+    height: 6rem;
+    width: 100%;
+    background-color: #f2f2f2;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden; /* Prevent parent from causing scroll */
+  }
+  
+  .filters {
+    flex: 1;
+    overflow-x: auto;
+  }
+  
+  .filters-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1rem;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
+    scroll-behavior: smooth;
+  }
+  
+  .filters-container::-webkit-scrollbar {
+    display: none;
+  }
+  /*
+  .filters-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  } */
+  
+  .filter-option {
+    flex: 0 0 auto;
+    width: 6rem;
+    height: 4rem;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+.filterbutton{
+    height:4rem ;
+    width: 10rem;
+    border-radius: 1rem;
+    margin-left: 0.5rem;
+    font-size: medium;
+    background-color: #d3f368;
+    border: none;
+    color: rgb(0, 0, 0);
 }
 
-/* Hide the default scrollbar but keep the ability to scroll */
-.filters-container::-webkit-scrollbar {
-  height: 8px;
+.filterbutton:hover{
+    background-color: #e5ccd4; /* Darker red on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.filters-container::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+.filter-option input{
+    display: none;
 }
-
-/* Styling for individual filter type */
-.filter-option {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  font-size: large;
-  align-items: center;
-  height: 4rem;
-  width: 6rem;
-}
-
-/* Hide the default checkboxes */
-input[type="checkbox"] {
-  display: none;
-}
-
-/* Label specific styling inside .filter-option */
-.filter-option label {
-  display: flex;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 5px;
-  height: 4rem;
-}
-
-/* Icon styling */
-.filter-option label i {
-  color: #555;
-}
-
-/* Label text styling */
-.filter-option label p {
-  color: #333;
-}
-
-/* Hover effect for labels */
-.filter-option label:hover {
-  background-color: #f0f0f0;
-}
-
-/* Checked state for labels */
-input[type="checkbox"]:checked + label {
-  background-color: #e0e0e0;
-  color: #333;
-}
-
-/* Styling for the apply filter button */
-.filters-apply-btn {
-  border: none;
-  margin-left:0.5rem ;
-  height: 4rem; 
-  width: 6rem;
-  background-color: #007BFF;
-  color: white;
-  cursor: pointer;
-  border-radius: 1rem;
-  transition: transform 0.2s ease;
-}
-
-.filters-apply-btn:hover {
-  transform: scale(1.05);
-  background-color: #0056b3; /* Darker blue on hover */
-}
+.filter-option input[type="checkbox"]:checked + label {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  .filter-option.clicked,
+  .filter-option input[type="checkbox"]:checked + label {
+    background-color: #FFEBEE; /* New background color when clicked or checked */
+  }
+  
 
