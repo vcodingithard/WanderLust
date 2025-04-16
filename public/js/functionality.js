@@ -20,8 +20,6 @@ let navlinks = document.querySelector(".navlinks");
 let login = document.querySelector(".login");
 let belowNavbar = document.querySelector(".belowNavbar");
 let price = document.querySelector(".switch");
-console.log(price);
-
 btn.addEventListener("click", () => {
 try {
   if (nav.style.height === "fit-content") {

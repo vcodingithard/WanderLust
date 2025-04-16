@@ -77,7 +77,7 @@ let newList = async (req, res) => {
 
     try {
         // Construct the prompt for Gemini API
-        const prompt = `Based on the location: "${req.body.listing.location}", suggest up to 3 relevant filters from the following list: ${predefinedFilters.join(", ")}. The response should be a simple comma-separated list of the filters.`;
+        const prompt = `Based on the location: "${req.body.listing.location}", suggest  relevant filters from the following list: ${predefinedFilters.join(", ")}. The response should be a simple comma-separated list of the filters.`;
 
         // Send the request to Gemini API using axios, simulating the curl request
         const response = await axios.post(
@@ -96,8 +96,6 @@ let newList = async (req, res) => {
 
         // Handle the Gemini API response
         const responseText = response.data.candidates[0].content.parts[0].text;
-        console.log("Gemini Response:", responseText);
-
         if (responseText) {
             // Split the response text into an array and remove any extra spaces
             const generatedFilters = responseText.split(",").map(filter => filter.trim());

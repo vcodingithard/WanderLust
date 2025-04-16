@@ -6,13 +6,13 @@
         <div class="details">
             <p>Owner: <%= list.owner.username %></p>
             <p class="card-text"><%= list.description %></p>
-            <p>&#8377;<%= list.price.toLocaleString("en-IN") %></p>
+            <p >&#8377;<%= list.price.toLocaleString("en-IN") %> <i class="price" style="display: none;">+18% GST/night</i></p>
             <p class="card-text"><%= list.location %></p>
             <p class="card-text"><%= list.country %></p>
         </div>  
     </div>
 
-    <% if(curruser&&curruser._id==list._id){%>  
+    <% if(curruser && curruser._id.toString()==list.owner._id.toString()){%>  
         <div class="col-8" id="edRoutes">
             <button class="ed" style="background-color: rgb(85, 189, 223);">
                 <a href="http://localhost:3000/listings/<%= list._id %>/edit" style="color: white; text-decoration: none;">Edit</a>
@@ -56,5 +56,18 @@
             <% } %>
         </div>
     </div>
-   
+   <script>
+        let p=document.querySelector(".price");
+        let check=document.querySelector(".form-check-input");
+
+        check.addEventListener("click",()=>{
+            if(p.style.display=="none"){
+                 p.style.display="inline";
+            }else{
+                p.style.display="none";
+            }
+        })
+
+
+   </script>
 </body>
