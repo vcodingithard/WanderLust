@@ -120,10 +120,21 @@ let newList = async (req, res) => {
 // Update an existing listing
 let updateList = async (req, res) => {
     let { id } = req.params;
-    await Listing.findByIdAndUpdate(id, req.body.listing, { runValidators: true });
+
+    // Update listing fields
+    let data = await Listing.findByIdAndUpdate(id, req.body.listing, { runValidators: true, new: true });
+
+    // Only update image if a new one was uploaded
+    if (req.file) {
+        data.image.url = req.file.path;
+        data.image.filename = req.file.filename;
+        await data.save(); // Save only if we modified the image
+    }
+
     req.flash("success", "The list was successfully updated");
     res.redirect(`/listings/${id}/show`);
 };
+
 
 // Edit a listing
 let editPage = async (req, res) => {

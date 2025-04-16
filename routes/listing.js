@@ -20,7 +20,7 @@ router.post("/",isLoggedIn,upload.single("listing[image]"),validateListing,WrapA
 
 router.get("/:id/edit",isLoggedIn,checkOwner,WrapAsync(editPage));
 
-router.patch("/:id",isLoggedIn,checkOwner,validateListing,WrapAsync(updateList) );
+router.patch("/:id",isLoggedIn,checkOwner,upload.single("listing[image]"),validateListing,WrapAsync(updateList) );
 
 
 router.get("/search", WrapAsync(searchInput));
