@@ -64,6 +64,9 @@ nav{
     .switch {
         display: none;
     }
+    .si{
+        margin: 0;
+    }
 }   
 .display{
     display: block;
@@ -247,7 +250,8 @@ h1{
     background-color: #922323;
 }
 .si{
-    width: 45%;
+    width: 50%;
+    margin: auto;
 }
 .chat-container {
     width: 90%;
@@ -323,6 +327,7 @@ h1{
     text-align: center;
   }
   
+
 .filterbutton{
     height:4rem ;
     width: 10rem;

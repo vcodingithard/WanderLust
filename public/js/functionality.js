@@ -20,6 +20,7 @@ let navlinks = document.querySelector(".navlinks");
 let login = document.querySelector(".login");
 let belowNavbar = document.querySelector(".belowNavbar");
 let price = document.querySelector(".switch");
+let si=document.querySelector(".si");
 btn.addEventListener("click", () => {
 try {
   if (nav.style.height === "fit-content") {
@@ -32,6 +33,8 @@ try {
     login.classList.remove("col");
     login.classList.remove("display");
     belowNavbar.style.display = "inline";
+    si.classList.remove("col");
+    si.classList.remove("display");
     price.style.display = "none"; // Hide price when not fit-content
   } else {
     // Expand the navbar
@@ -41,6 +44,8 @@ try {
     nav.classList.add("col");
     navlinks.classList.add("col");
     navlinks.classList.add("display");
+    si.classList.add("col");
+    si.classList.add("display");
     login.classList.add("col");
     login.classList.add("display");
     price.style.display = "inline"; // Show price when fit-content
